@@ -5,7 +5,7 @@
 
 #include "huffman_tree_node.h"
 
-namespace huffman_code {
+namespace data_compression {
 
     class PriorityQueue {
 

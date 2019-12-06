@@ -3,13 +3,12 @@
 
 #include <map>
 #include <vector>
-#include <queue>
 #include <fstream>
 
 #include "huffman_tree_node.h";
 #include "h_priority_queue.h";
 
-namespace huffman_code {
+namespace data_compression {
 
     class HuffmanCode {
         
@@ -29,7 +28,5 @@ namespace huffman_code {
     };
 
 }
-
-#include "huffman_code.hpp"
 
 #endif

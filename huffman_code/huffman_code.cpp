@@ -1,6 +1,6 @@
 #include "huffman_code.h"
 
-using namespace huffman_code;
+using namespace data_compression;
 
 void HuffmanCode::getFrequencies(std::string target_filename) {
     std::ifstream target_file(target_filename);

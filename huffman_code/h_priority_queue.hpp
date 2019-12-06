@@ -1,6 +1,6 @@
 #include "h_priority_queue.h";
 
-void huffman_code::PriorityQueue::push(char data, int frequency) {
+void data_compression::PriorityQueue::push(char data, int frequency) {
     HuffmanTreeNode *new_node = new HuffmanTreeNode(data, frequency);
 
     if (this->queue.size() == 0) {
@@ -16,7 +16,7 @@ void huffman_code::PriorityQueue::push(char data, int frequency) {
     }
 }
 
-huffman_code::HuffmanTreeNode* huffman_code::PriorityQueue::pop() {
+data_compression::HuffmanTreeNode* data_compression::PriorityQueue::pop() {
     HuffmanTreeNode* removed_node = this->queue[0];
 
     this->queue.erase(this->queue.begin());
@@ -24,6 +24,6 @@ huffman_code::HuffmanTreeNode* huffman_code::PriorityQueue::pop() {
     return removed_node;
 }
 
-int huffman_code::PriorityQueue::size() {
+int data_compression::PriorityQueue::size() {
     return this->queue.size();
 }
