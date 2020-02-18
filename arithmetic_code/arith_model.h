@@ -1,24 +1,16 @@
 #ifndef ARITH_MODEL_H
 #define ARITH_MODEL_H
 
-#include <vector>
+#include <string>
+#include <utility>
+#include <fstream>
+#include <iostream>
 
 namespace data_compression {
-    class ArithmeticModel {
-        public:
-        struct ModelProb {
-            private:
-            int upper_, lower_, denominator_;
-
-            public:
-            int getUpper();
-            int getLower();
-            int getDenominator();
-        };
-        
-        ~ArithmeticModel();
-        ModelProb getProbability(char c);
-    };
+    std::pair<double, double> getProbability(char c);
+    double encode(std::string filename);
+    std::string decode(double encoded);
+    char getSymbol(double val);
 }
 
 #endif

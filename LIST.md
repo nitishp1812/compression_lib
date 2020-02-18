@@ -1,0 +1,10 @@
+- Huffman Coding (Done)
+- Arithmetic Coding (Done)
+- LZ77
+- LZ78
+- LZW
+- LZMA
+- LZWL
+- LZSS
+- DEFLATE
+- PPM
