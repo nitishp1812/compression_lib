@@ -8,8 +8,8 @@
 
 namespace data_compression {
     std::pair<double, double> getProbability(char c);
-    double encode(std::string filename);
-    std::string decode(double encoded);
+    void arithmetic_encode(std::string in_filename, std::string out_filename);
+    void arithmetic_decode(std::string in_filename, std::string out_filename);
     char getSymbol(double val);
 }
 

@@ -1,7 +1,7 @@
 #include "arith_model.h"
 
-double data_compression::encode(std::string filename) {
-    std::ifstream in_file(filename);
+void data_compression::arithmetic_encode(std::string in_filename, std::string out_filename) {
+    std::ifstream in_file(in_filename);
 
     double high = 1.0;
     double low = 0.0;
@@ -16,10 +16,14 @@ double data_compression::encode(std::string filename) {
     }
     
     double compressed = low + ((high - low) / 2);
-    return compressed;
+    
+    // TODO: write compressed to output file
 }
 
-std::string data_compression::decode(double encoded) {
+void data_compression::arithmetic_decode(std::string in_filename, std::string out_filename) {
+    // TODO: Extract encoded from input file
+    double encoded = 0.0;
+
     double high = 1.0;
     double low = 0.0;
 
@@ -41,7 +45,7 @@ std::string data_compression::decode(double encoded) {
         high = low + (range * prob.second); 
     }
 
-    return out;
+    // TODO: write out to output file
 }
 
 std::pair<double, double> data_compression::getProbability(char c) {

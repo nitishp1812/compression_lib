@@ -1,12 +1,12 @@
-#ifndef HUFFMAN_COMPRESS
-#define HUFFMAN_COMPRESS
+#ifndef HUFFMAN_COMPRESS_H
+#define HUFFMAN_COMPRESS_H
 
 #include <map>
 #include <vector>
 #include <fstream>
+#include <queue>
 
-#include "huffman_tree_node.h";
-#include "h_priority_queue.h";
+#include "huffman_tree_node.hpp"
 
 namespace data_compression {
 
@@ -16,16 +16,18 @@ namespace data_compression {
         std::map<char, size_t> frequencies_;
         std::map<char, std::vector<bool>> character_codes_;
 
-        //methods to encode contents of file
-        void getFrequencies(std::string target_filename);
-        void generateTree();
         void generateCharacterCodes(HuffmanTreeNode *current, std::vector<bool> path);
 
         public:
-        
-        std::string encodeFile(std::string target_filename);
-        std::string decodeFile(std::string encoded_filename);
+        //methods to encode contents of file
+        void getFrequencies(std::string target_filename);
+        void generateTree();
+        void generateCharacterCodes();
     };
+
+
+    void huffman_encode(std::string in_filename, std::string out_filename);
+    void huffman_decode(std::string in_filename, std::string out_filename);
 
 }
 
