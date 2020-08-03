@@ -1,5 +1,6 @@
 #include <fstream>
 #include <string>
+#include <iostream>
 
 #include "cxxopts.hpp"
 
@@ -26,7 +27,7 @@ int main(int argc, char **argv) {
         ("d, decompress", "Included when input file needs to be decompressed")
         ("f, file", "Path to input file", cxxopts::value<std::string>())
         ("m, method", "Method to use for compression / decompression", cxxopts::value<std::string>()->default_value("huffman"))
-        ("o, out", "Path to output file", cxxopts::value<std::string>()->default_value("out.txt"))
+        ("o, out", "Path to output file", cxxopts::value<std::string>()->default_value("../out.txt"))
         ("h, help", "Help");
 
     cxxopts::ParseResult result = options.parse(argc, argv);
@@ -46,6 +47,11 @@ int main(int argc, char **argv) {
 
     std::string method = result["method"].as<std::string>();
     std::string out_filename = result["out"].as<std::string>();
+
+    if (in_filename == out_filename) {
+        std::cerr << "Both filenames are the same\n";
+        exit(1);
+    }
 
     Methods m = convert(method);
 
